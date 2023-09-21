@@ -628,6 +628,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98cdee121d6e440de9fb99a7c24fa0da, type: 3}
+--- !u!198 &1134185312 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198000010131513902, guid: 8e60b325a019543cbb2e3920522a2e6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 646790004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1327369720
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +696,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327369720}
-  m_LocalRotation: {x: 0.41852474, y: -0.34116474, z: 0.17335862, w: 0.82364464}
+  m_LocalRotation: {x: 0.41852477, y: -0.3411648, z: 0.17335865, w: 0.82364464}
   m_LocalPosition: {x: 8, y: 16, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -833,7 +839,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922547896}
-  m_LocalRotation: {x: 0.41852474, y: -0.34116474, z: 0.17335862, w: 0.82364464}
+  m_LocalRotation: {x: 0.41852477, y: -0.3411648, z: 0.17335865, w: 0.82364464}
   m_LocalPosition: {x: 8, y: 16, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -875,6 +881,12 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!198 &1967696122 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198000012944515248, guid: 74d744994bc414c37bfda957f1d57118,
+    type: 3}
+  m_PrefabInstance: {fileID: 831400154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2083708004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1137,3 +1149,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &2083708009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083708006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c14943f73d87543b453f3a037d7029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireTransform: {fileID: 2083708005}
+  muzzleFlashEffect: {fileID: 1967696122}
+  shellEjectEffect: {fileID: 1134185312}
+  gunData: {fileID: 11400000, guid: b1e720458b5c91d46b591a98b05c8ddc, type: 2}
+  ammoRemain: 100
+  magAmmo: 0
