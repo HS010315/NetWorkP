@@ -50,7 +50,7 @@ public class Gun : MonoBehaviour {
     }
     private void Update()
     {
-        if(Input.GetKeyDown (KeyCode.Space))
+        if(Input.GetKeyDown    (KeyCode.Space))
         {
             Fire();
         }
@@ -136,7 +136,13 @@ public class Gun : MonoBehaviour {
 
     // 재장전 시도
     public bool Reload() {
-        return false;
+        if(state == State.Reloading || ammoRemain <= 0 || magAmmo >= gunData.magCapacity)
+        {
+            return false;
+        }
+
+        StartCoroutine(ReloadRoutine());
+        return true;
     }
 
     // 실제 재장전 처리를 진행
@@ -147,6 +153,15 @@ public class Gun : MonoBehaviour {
         // 재장전 소요 시간 만큼 처리 쉬기
         yield return new WaitForSeconds(gunData.reloadTime);
 
+        int ammoToFill = gunData.magCapacity - magAmmo;
+
+        if(ammoRemain < ammoToFill)
+        {
+            ammoToFill = ammoRemain;
+        }
+        magAmmo += ammoToFill;
+
+        ammoRemain -= ammoToFill;
         // 총의 현재 상태를 발사 준비된 상태로 변경
         state = State.Ready;
     }
